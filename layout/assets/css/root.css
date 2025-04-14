@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "Inika";
+    src: url("../fonts/Inika/Inika-Regular.ttf");
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    font-size: 20px;
+    color: #1C1814;
+    font-weight: 400;
+    background-color: #fff; /* Белый фон по умолчанию */
+    -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов для Webkit */
+    -moz-osx-font-smoothing: grayscale; /* Сглаживание для Firefox */
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 400;
+}
+
+button, input, select, textarea {
+    font-family: inherit; /* Наследуем шрифт от body */
+    font-size: 100%; /* Убираем странные размеры по умолчанию */
+    margin: 0; /* Обнуляем отступы */
+    border: none; /* Убираем стандартные границы */
+    background: none; /* Убираем фон */
+}
+
+button{
+    cursor: pointer;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}

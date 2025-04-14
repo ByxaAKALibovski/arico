@@ -1,0 +1,252 @@
+.category__card{
+    max-width: 460px;
+    width: 100%;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: #D6E0D6;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow: hidden;
+
+    &>img.image__category{
+        border-radius: 50px;
+        max-width: 360px;
+    }
+
+    &>h3.title__category{
+        font-size: 20px;
+        font-weight: 400;
+        color: #1C1814;
+    }
+
+    &>a.link__category{
+        display: flex;
+        transition: 0.4s;
+        gap: 25px;
+        align-items: center;
+        color: #0C440C;
+        font-size: 20px;
+        width: fit-content;
+
+        & svg{
+            width: 23px;
+        }
+
+        & svg path{
+            fill: #0C440C;
+        }
+
+        &:hover{
+            gap: 35px;
+        }
+    }
+}
+
+.btn{
+    display: flex;
+    width: fit-content;
+    padding: 20px 50px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background-color: #0C440C;
+    color: #FFF;
+    transition: 0.4s;
+    font-size: 24px;
+    font-weight: 700;
+    border: 2px solid transparent;
+
+    &:hover{
+        border-color: #0C440C;
+        color: #0C440C;
+        background-color: #FFF;
+    }
+}
+
+.arrow__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #D6E0D6;
+    width: 70px;
+    height: 70px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &.prev{
+        transform: rotate(-180deg);
+    }
+    &.next{
+        transform: rotate(0deg);
+    }
+
+    &:hover{
+        background-color: #0C440C;
+
+        & svg path{
+            fill: #D6E0D6;
+        }
+    }
+}
+
+.custom__input{
+    border: none;
+    outline: none;
+    background-color: #0C440C;
+    color: #FFF;
+    font-size: 24px;
+    padding: 20px 50px;
+    border-radius: 50px;
+    max-width: 760px;
+    width: 100%;
+
+    &::placeholder{
+        color: #FFF;
+    }
+}
+
+.product__card{
+    display: flex;
+    max-width: 460px;
+    width: 100%;
+    padding: 50px;
+    background-color: #D6E0D6;
+    border-radius: 50px;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: #bfc5bf;
+    }
+
+    & img{
+        max-width: 360px;
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    & h3.title__product{
+        font-weight: 700;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    & p.price__product{
+        font-weight: 700;
+        font-size: 20px;
+        color: #0C440C;
+    }
+}
+
+.container{
+    padding: 0 40px;
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.section__title{
+    color: #0C440C;
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+}
+
+form.reviews__add{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #0C440C;
+    border-radius: 50px;
+    padding: 50px;
+    gap: 25px;
+
+    & h3{
+        font-weight: 400;
+        font-size: 20px;
+        color: #FFF;
+        text-align: center;
+    }
+
+    & .custom__input{
+        background-color: #C9CBC0;
+        color: #1C1814;
+
+        &::placeholder{
+            color: #1C1814;
+        }
+    }
+
+    & textarea.custom__input{
+        resize: none;
+    }
+
+    & .btn{
+        background-color: #D6E0D6;
+        color: #1C1814;
+        border-color: #D6E0D6;
+        margin: 25px auto 0 auto;
+
+        &:hover{
+            background-color: transparent;
+            color: #D6E0D6;
+        }
+    }
+
+    & .rating__block {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 0;
+        position: static; /* Оставляем в потоке, как в предыдущем исправлении */
+
+        & svg {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        & path {
+            fill: #C9CBC0; /* Цвет незакрашенных звезд, чтобы не сливались с фоном */
+        }
+
+        /* Закрашивание звезд в зависимости от data-rate */
+        &[data-rate="1"] svg:nth-child(-n + 1) path,
+        &[data-rate="2"] svg:nth-child(-n + 2) path,
+        &[data-rate="3"] svg:nth-child(-n + 3) path,
+        &[data-rate="4"] svg:nth-child(-n + 4) path,
+        &[data-rate="5"] svg:nth-child(-n + 5) path {
+            fill: #FFB800; /* Новый цвет для активных звезд */
+        }
+
+        /* Эффект наведения */
+        & svg:hover path {
+            fill: #FFD700; /* Легкий желтый для наведения, чтобы отличался от выбранных */
+        }
+
+        /* Сброс подсветки для звезд после текущей при наведении */
+        & svg:hover ~ svg path {
+            fill: #C9CBC0;
+        }
+
+        /* Масштабирование при наведении */
+        & svg:hover {
+            transform: scale(1.2);
+        }
+    }
+}
